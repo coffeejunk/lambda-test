@@ -1,6 +1,8 @@
-require 'httparty' # <- works
+require 'httparty'
 require 'json'
-require 'lambdatestgem' # <- fails
+load_paths = Dir["./vendor/bundle/ruby/2.5.0/bundler/gems/**/lib"]
+$LOAD_PATH.unshift(*load_paths)
+require 'lambdatestgem'
 
 def lambda_handler(event:, context:)
   # Sample pure Lambda function
